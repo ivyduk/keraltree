@@ -1744,6 +1744,50 @@
         </div>
     </div>
 
+     <div class="container" style="margin-top: 50px;">
+        <div class="header">
+            <h1>🌳 Cuestionario de Retroalimentación</h1>
+            <p>¡Nos encantaría conocer tu opinión! Completa el siguiente formulario:</p>
+        </div>
+
+        <form id="feedbackForm">
+            <label for="name">Nombre:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="suggestion">Sugerencia:</label><br>
+            <textarea id="suggestion" name="suggestion" required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "YOUR_GOOGLE_APPS_SCRIPT_URL", true);  // Reemplaza con tu URL del Google Apps Script
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // Convertir los datos del formulario a una cadena URL-encoded
+            var urlEncodedData = "";
+            formData.forEach(function(value, key) {
+                urlEncodedData += encodeURIComponent(key) + "=" + encodeURIComponent(value) + "&";
+            });
+            urlEncodedData = urlEncodedData.slice(0, -1); // Eliminar el último "&"
+
+            // Enviar datos al Google Sheet
+            xhr.send(urlEncodedData);
+
+            // Mostrar confirmación
+            alert('¡Gracias por tu retroalimentación!');
+            document.getElementById('feedbackForm').reset(); // Resetear el formulario
+        });
+    </script>
     <script>
         let gotasTotales = 6847;
         let arbolActual = '🌳';
