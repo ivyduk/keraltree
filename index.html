@@ -1751,44 +1751,56 @@
             <p>¡Nos encantaría conocer tu opinión! Completa el siguiente formulario:</p>
         </div>
 
-        <form id="feedbackForm">
-            <label for="name">Nombre:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-
-            <label for="email">Correo electrónico:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="suggestion">Sugerencia:</label><br>
-            <textarea id="suggestion" name="suggestion" required></textarea><br><br>
-
-            <button type="submit">Enviar</button>
+        <!-- Formulario de Retroalimentación (al final de la página) -->
+    <div class="container" style="margin-top: 50px;">
+        <div class="header" style="text-align: center;">
+            <h1 style="font-size: 2.5em; color: #2d3748;">🌳 Cuestionario de Retroalimentación</h1>
+            <p style="font-size: 1.2em; color: #718096;">¡Nos encantaría conocer tu opinión! Completa el siguiente formulario:</p>
+        </div>
+    
+        <form id="feedbackForm" style="max-width: 600px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <label for="name" style="font-size: 1.2em; color: #2d3748;">Nombre:</label><br>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 1.1em;">
+    
+            <label for="email" style="font-size: 1.2em; color: #2d3748;">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 1.1em;">
+    
+            <label for="suggestion" style="font-size: 1.2em; color: #2d3748;">Sugerencia:</label><br>
+            <textarea id="suggestion" name="suggestion" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 1.1em; height: 150px;"></textarea><br>
+    
+            <button type="submit" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1.2em; font-weight: 600; cursor: pointer; transition: transform 0.3s;">
+                Enviar
+            </button>
         </form>
     </div>
-
+    
     <script>
         document.getElementById('feedbackForm').addEventListener('submit', function(event) {
             event.preventDefault();
-
+    
             var formData = new FormData(this);
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "YOUR_GOOGLE_APPS_SCRIPT_URL", true);  // Reemplaza con tu URL del Google Apps Script
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
+    
             // Convertir los datos del formulario a una cadena URL-encoded
             var urlEncodedData = "";
             formData.forEach(function(value, key) {
                 urlEncodedData += encodeURIComponent(key) + "=" + encodeURIComponent(value) + "&";
             });
             urlEncodedData = urlEncodedData.slice(0, -1); // Eliminar el último "&"
-
+    
             // Enviar datos al Google Sheet
             xhr.send(urlEncodedData);
-
+    
             // Mostrar confirmación
             alert('¡Gracias por tu retroalimentación!');
             document.getElementById('feedbackForm').reset(); // Resetear el formulario
         });
     </script>
+
+
+         
     <script>
         let gotasTotales = 6847;
         let arbolActual = '🌳';
