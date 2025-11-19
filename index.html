@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KeralTree - Gamified study monitoring for health organizations">
+    <title>KeralTree - Gamified Learning Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 30px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .feature-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌳 KeralTree</h1>
+            <p>Empowering Healthcare Professionals Through Gamified Learning</p>
+        </header>
+        
+        <div class="main-content">
+            <section>
+                <h2 style="color: #667eea; text-align: center; font-size: 2.5em; margin-bottom: 20px;">
+                    Transform Study Habits into Achievement
+                </h2>
+                <p style="text-align: center; font-size: 1.2em; color: #666; max-width: 800px; margin: 0 auto 40px;">
+                    KeralTree is a revolutionary mobile application designed for health organizations to 
+                    monitor and enhance professional development through gamification. Track progress, 
+                    earn rewards, and grow your knowledge tree!
+                </p>
+            </section>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">🎮</div>
+                    <h3>Gamification</h3>
+                    <p>Turn studying into an engaging experience with points, badges, and levels. Complete challenges and unlock achievements as you advance in your learning journey.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your study activities in real-time with comprehensive dashboards. Track hours studied, topics mastered, and goals achieved with detailed analytics.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">🏆</div>
+                    <h3>Achievements</h3>
+                    <p>Celebrate milestones with a robust achievement system. Earn badges for consistency, excellence, and dedication to continuous learning in healthcare.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">👥</div>
+                    <h3>Team Collaboration</h3>
+                    <p>Connect with colleagues and compete in friendly challenges. Share progress, form study groups, and support each other's professional development.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Mobile First</h3>
+                    <p>Access your learning journey anywhere, anytime. Optimized for mobile devices, making it easy to log study sessions and track progress on the go.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">🔒</div>
+                    <h3>Healthcare Compliant</h3>
+                    <p>Built with healthcare organizations in mind, ensuring data privacy and compliance with industry standards. Secure, reliable, and professional.</p>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h2>Ready to Grow Your Knowledge Tree?</h2>
+                <p style="font-size: 1.2em; margin-bottom: 20px;">
+                    Join healthcare professionals who are transforming their learning experience
+                </p>
+                <a href="#" class="cta-button">Get Started Today</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2024 KeralTree. Empowering healthcare professionals through gamified learning.</p>
+        </footer>
+    </div>
+</body>
+</html>
