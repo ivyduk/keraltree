@@ -878,6 +878,148 @@
         .empty-state-texto {
             font-size: 1.1em;
         }
+        /* Estilos para la sección Huella de Carbono - coherentes con otras secciones */
+        .carbon-footprint-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .carbon-header {
+            font-size: 1.3em;
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .goal-progress {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .goal-progress .progress-bar {
+            flex: 1 1 320px;
+            height: 28px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e6edf7;
+        }
+
+        .goal-progress .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .global-goal {
+            color: #718096;
+            font-size: 0.95em;
+        }
+
+        .tree-icon {
+            font-size: 2em;
+            min-width: 48px;
+            text-align: center;
+        }
+
+        .subsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f7fafc;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .subsection-title {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .subsection-value {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .carbon-footer {
+            margin-top: 10px;
+            color: #718096;
+            font-weight: 600;
+            text-align: center;
+            padding-top: 8px;
+            border-top: 1px solid #edf2f7;
+        }
+
+        @media (max-width: 768px) {
+            .goal-progress {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .tree-icon {
+                text-align: left;
+            }
+        }
+        /* Ajustes responsive adicionales: logo y botones de cursos */
+        @media (max-width: 768px) {
+            /* Hacer que el header con logos sea flexible y las imágenes responsivas */
+            .header h1 {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin: 0;
+            }
+
+            .header h1 img {
+                max-width: 45%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+
+            /* Forzar el logo central a ocupar la fila completa si es necesario */
+            .header h1 img[alt="Keraltree"],
+            .header h1 img[alt="Keraltree.png"] {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+
+            /* Ajustes para los items de cursos - evitar que los botones salgan del contenedor */
+            .accion-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .accion-info {
+                width: 100%;
+            }
+
+            .accion-acciones {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                justify-content: flex-end;
+                margin-top: 12px;
+            }
+
+            .btn-accion {
+                white-space: nowrap;
+                min-width: 120px;
+            }
+        }
     </style>
 </head>
 
@@ -1731,16 +1873,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+            
+            <!-- Sección de Huella de Carbono dentro de Árbol Comunitario -->
+            <div class="carbon-footprint-section">
+                <div class="carbon-header">🌍 Huella de Carbono de la Comunidad</div>
 
-        <!-- Sección de Huella de Carbono dentro de Árbol Comunitario -->
-                <div class="carbon-footprint-section">
-                    <div class="carbon-header">🌍 Huella de Carbono de la Comunidad</div>
-
-                    <!-- Barra de Progreso de Meta Global -->
-                    <div class="goal-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 97%; font-size: 1em;">500M Árboles Meta Global</div>
+                <!-- Barra de Progreso de Meta Global -->
+                <div class="goal-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 97%; font-size: 1em;">500M Árboles Meta Global</div>
                         </div>
                         <div class="global-goal">
                             Meta Global: 500 millones de árboles
@@ -1777,6 +1918,7 @@
             </div>
         </div>
     </div>
+        </div>
     </div>
 
     <!-- Notificación -->
